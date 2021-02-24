@@ -4,13 +4,13 @@ const hoursEl = document.getElementById('hours');
 const minutesEl = document.getElementById('minutes');
 const secondsEl = document.getElementById('seconds');
 
-const newYears = '3 Jul 2021';
+const myBirthday = '3 Jul 2021';
 
 function countdown(){
-    const newYearsDate = new Date(newYears);
+    const birthdayDate = new Date(myBirthday);
     const currentDate = new Date();
 
-    const totalSeconds = (newYearsDate-currentDate)/1000;
+    const totalSeconds = (birthdayDate-currentDate)/1000;
     const days = Math.floor(totalSeconds/3600/24);
     const hours = Math.floor(totalSeconds/3600) %24;
     const mins= Math.floor(totalSeconds/60) %60;
