@@ -11,7 +11,7 @@
     })
   }
 
-  // when the promise resolves, we pass a function that takes the data that was passed into the reolve function 
+  // when the promise resolves, we pass a function that takes the data that was passed into the resolve function 
   // the second callback function only fires if the promise is rejceted
   getData().then((data) => {
       console.log(data);
