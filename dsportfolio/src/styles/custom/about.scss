@@ -1,0 +1,228 @@
+.about-section {
+    width: 100%;
+    height: 105vh;
+    max-height: 105vh;
+    background-image: url('../../images/FL6.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 !important;
+    padding: 0;
+    position: relative;
+  }
+  
+  .mid-text {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 60vh;
+  }
+  
+  .about-item {
+    height: 60vh;
+    align-items: right;
+    width: 65%;
+    position: relative;
+  }
+  
+  .about-text-wrap {
+    width: 100%;
+    height: 55vh;
+    text-align: right;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: relative;
+    margin-top: 20vh;
+  }
+  
+  .about-text-wrap > span {
+    text-transform: uppercase;
+    font-size: 9.4rem;
+    font-weight: 300;
+    position: relative;
+    letter-spacing: -0.04em;
+  }
+  
+  #myself-text-wrap {
+    width: 98%;
+    text-align: right;
+    margin-top: -10%;
+    padding-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  
+  #myself-text-wrap > span {
+    text-transform: uppercase;
+    font-size: 9.4rem;
+    font-weight: 300;
+    position: relative;
+    letter-spacing: -0.01em;
+  }
+  
+  #letter-it {
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.035em;
+    margin-left: -15px;
+  
+    &-s {
+      font-style: italic !important;
+      font-family: 'Open Sans', sans-serif;
+      letter-spacing: 0.012em !important;
+      margin-left: -18px;
+    }
+  }
+  
+  #shortly-letter-it {
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.035em;
+    font-weight: 600;
+  }
+  
+  #shortly-text-wrap {
+    width: 86%;
+    text-align: right;
+    padding-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: relative;
+    align-items: flex-end;
+    margin-top: -6%;
+  }
+  
+  #shortly-letter {
+    font-size: 1rem;
+    font-weight: 300;
+    position: relative;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+  }
+  
+  .unbutton {
+      background: none;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      font: inherit;
+    position: relative;
+  }
+  
+  .unbutton:focus {
+      outline: none;
+  }
+  
+  .item_enter {
+      display: none;
+      will-change: transform;
+    // margin-left: 50vw;
+    // margin-top: -60vh;
+  }
+  
+  .item_enter-circle {
+      fill: none;
+      stroke: #fdfaf3;
+      stroke-width: 0.8px;
+      will-change: transform, opacity;
+    position: relative;
+  }
+  
+  .about-link-wrap {
+      line-height: 1.2;
+      will-change: transform;
+  }
+  
+  .about-link {
+      display: inline-block;
+    position: relative;
+    margin-left: 41vw;
+      cursor: pointer;
+      font-weight: 500;
+      line-height: 1.7;
+      overflow: hidden;
+    color: #fdfaf3;
+    font-size: 2.05rem;
+  }
+  
+  .about-link span {
+      display: inline-block;
+      padding-bottom: 10px;
+      position: relative;
+  }
+  
+  .about-link span::after {
+      content: '';
+      width: 100%;
+      height: 2px;
+      top: calc(100% - 10px);
+    background: rgb(55, 0, 255);
+      position: absolute;
+      left: 0;
+      transition: transform 0.2s;
+      transform-origin: 100% 0;
+  }
+  
+  .about-link span:hover::after {
+      transform: scale3d(0,1,1);
+  }
+  
+  .char-wrap {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+  }
+  
+  .char {
+      display: inline-block;
+      will-change: transform;
+  }
+  
+  .cursor {
+    display: none;
+  }
+  
+  
+  @media (any-pointer:fine) {
+      .cursor {
+          position: fixed;
+          top: 0;
+          left: 0;
+          display: block;
+          pointer-events: none;
+          z-index: 5000;
+      }
+  
+      .cursor__inner {
+          fill:  none; // add to globals
+          stroke: #fdfaf3; // add to globals
+          stroke-width: 0.8px; // add to globals
+          opacity: 0.7;
+      }
+  
+  }
+  
+  @media (min-width: 53em) {
+  
+      .item_enter {
+      align-self: center;
+          justify-self: center;
+          display: flex;
+          grid-area: enter;
+          position: relative;
+          z-index: 1000;
+          max-width: 400px;
+          max-height: 400px;
+          align-items: center;
+          justify-content: center;
+      margin-left: 84%;
+      margin-top: -38%;
+      width: 800px;
+      }
+  
+      .item_enter-circle {
+          pointer-events: none;
+          cursor: pointer;
+          flex: none;
+      }
+  }
