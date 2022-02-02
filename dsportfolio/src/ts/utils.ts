@@ -1,4 +1,5 @@
 var WebFont = require('webfontloader');
+const imagesLoaded = require('imagesLoaded');
 
 // preload fonts
 const preloadFonts = (id:any) => {
@@ -11,6 +12,15 @@ const preloadFonts = (id:any) => {
         });
     });
 };
+
+
+// Preload images
+const preloadImages = (selector = 'img') => {
+    return new Promise((resolve) => {
+        imagesLoaded(document.querySelectorAll(selector), {background: true}, resolve);
+    });
+};
+
 
 // Linear interpolation
 const lerp = (a:number, b:number, n:number) => (1 - n) * a + n * b;
@@ -56,6 +66,7 @@ const wrapElements = (elems:Array<Node>, wrapType: string, wrapClass:string) => 
 
 export { 
     preloadFonts,
+    preloadImages,
     lerp, 
     calcWinsize, 
     getMousePos,

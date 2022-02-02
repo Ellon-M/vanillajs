@@ -1,4 +1,5 @@
 const home = `
+<div id="container"></div> 
 <div class='about-section'>
  <div class="mid-text">
   <div class='about-item'>
