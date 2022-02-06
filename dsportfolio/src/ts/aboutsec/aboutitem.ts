@@ -34,6 +34,9 @@ export class AboutItem {
     magneticFx; // the circle magnetic functionality
     timelineHoverOut!: gsap.core.Timeline;
     timelineHoverIn!: gsap.core.Timeline;
+    timelineHoverOpen!: gsap.core.Timeline;
+    isAboutOpen!: boolean;
+    svgComplete!: GSAPCallback;
 
     constructor (el:Element, abtArr:Array<any>) {
         this.DOM = { el: el, enterAction: undefined, enterActionSVGCircle: undefined,  abtText: undefined, itemAbtChars: undefined, linkWrap: undefined, link: undefined };
@@ -89,6 +92,7 @@ export class AboutItem {
     }
 
     onMouseLeave() {
+        if ( this.isAboutOpen ) return;
         if( this.timelineHoverIn ) this.timelineHoverIn.kill();
         
         this.timelineHoverOut = gsap.timeline()
@@ -121,8 +125,55 @@ export class AboutItem {
     }
 
     open() {
+        this.magneticFx.stopRendering();
+        if( this.timelineHoverIn ) this.timelineHoverIn.kill();
+        // if( this.timelineHoverClose ) this.timelineHoverClose.kill();
 
+        this.isAboutOpen = true;
+
+        document.body.classList.add('oh');
+        const enterActionRect = this.DOM.enterAction.getBoundingClientRect();
+        const linkRect = this.DOM.link.getBoundingClientRect();
+
+        this.timelineHoverOpen = gsap.timeline({onComplete: () => { gsap.to(document.body, {
+            opacity: 0,
+            ease: 'power3'
+        }); setTimeout(() => {window.location.assign('/about')}, 300)}, smoothChildTiming: true,}).addLabel('start', 0)
+        .to([this.abtArr.filter(item => item != this).map(item => item.DOM.el)], {
+            duration: 0.6,
+            ease: 'power3',
+            opacity: 0
+        }, 'start')
+        .to(this.DOM.enterAction, {
+            duration: 0.8,
+            ease: 'power2',
+            x: winsize.width/2 - enterActionRect.left - enterActionRect.width/2,
+            y: -enterActionRect.top - enterActionRect.height/2
+        }, 'start')
+        .to(this.DOM.enterActionSVGCircle, {
+            duration: 1.5,
+            ease: 'power2',
+            scale: 2.3,
+            opacity: 0,
+            onComplete: () => gsap.set(this.DOM.enterAction, {
+                x: 0,
+                y: 0
+            }) as any
+        }, 'start')
+        .to(this.DOM.itemAbtChars, {
+            duration: 0.6,
+            ease: 'quad.in',
+            x: '-103%',
+            opacity: 0
+        }, 'start')
+        .to(this.DOM.link, {
+            duration: 0.6,
+            delay: .1,
+            ease: 'expo',
+            scale: 2,
+            y: -linkRect.top/2 - linkRect.height/4,
+            opacity: 0,
+        }, 'start')
     }
 
 }
-

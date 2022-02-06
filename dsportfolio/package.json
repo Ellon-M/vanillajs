@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-glsl": "^2.2.1",
+    "@types/animejs": "^3.1.4",
     "@types/dat.gui": "^0.7.7",
     "@types/node": "^17.0.12",
     "dead-server": "^1.0.6",
@@ -19,6 +20,7 @@
   },
   "dependencies": {
     "@types/three": "^0.136.1",
+    "animejs": "^3.2.1",
     "dat.gui": "^0.7.7",
     "esbuild": "^0.14.14",
     "glslify-bundle": "^5.1.1",
