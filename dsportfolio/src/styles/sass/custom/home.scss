@@ -31,16 +31,24 @@ ul {
 .f {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    min-height: 100vh;
-    max-height: 100vh;
+    height: 110vh;
+    min-height: 110vh;
+    max-height: 110vh;
     width: 100vw;
     padding-top: 6.48148vh;
     padding-bottom: 6.48148vh;
-    background-image: url('../../images/brush10.png');
+    background-image: url('../../images/brush10b.png');
     background-repeat: no-repeat;
     background-size: cover;
-    // overflow-x: hidden;
+
+    &-sec {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        min-height: 100vh;
+        max-height: 100vh;
+        width: 100vw;
+    }
 
     &-top {
         display: flex;
@@ -65,20 +73,48 @@ ul {
         display: block;
         margin-bottom: 3.9375vh;
         visibility: hidden;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        cursor: default;
     }
 
     &-word-sub {
         visibility: hidden;
         padding-right: 2rem;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        cursor: default;
     }
 
     &-char {
         display: inline-block;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        cursor: default;
     }
 
     &-char-it {
         display: inline-block;
         letter-spacing: .01em;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        cursor: default;
     }
 
     &-nav-wrap {
@@ -138,6 +174,8 @@ ul {
         flex-direction: column;
         align-items: flex-end;
         font-family: 'Oxygen';
+        font-size: .8rem;
+        padding-right: 8px;
     }
 
     &-nav-theme-btn {
@@ -148,6 +186,7 @@ ul {
         white-space: nowrap;
         color: $primary-dark;
         border: none;
+        padding-bottom: .2rem;
     }
 
     &-bottom {

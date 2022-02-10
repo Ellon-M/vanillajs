@@ -18,7 +18,7 @@ const preloadFonts = () => {
 
 
 // Preload images
-const preloadImages = (selector = 'img') => {
+const preloadImages = (selector: string) => {
     return new Promise((resolve) => {
         imagesLoaded(document.querySelectorAll(selector), {background: true}, resolve);
     });
@@ -63,6 +63,13 @@ const angle = (x1: number, y1: number, x2: number, y2: number) => atan2(y2 - y1,
 
 
 const lerp = (a:number, b:number, n:number) => (1 - n) * a + n * b;
+
+
+const lineEquation = (y2: number, y1: number, x2: number, x1: number, currentVal: number) => {
+    // y = mx + b 
+    var m = (y2 - y1) / (x2 - x1), b = y1 - m * x1;
+    return m * currentVal + b;
+};
 
 
 const calcWinsize = () => {
@@ -120,6 +127,7 @@ export {
     cos,
     sin,
     lerp, 
+    lineEquation,
     calcWinsize, 
     getMousePos,
     distance,

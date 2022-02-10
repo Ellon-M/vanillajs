@@ -2,11 +2,11 @@ type RouteType = {
     [key: string]: string
 };
 
-/* global home, about */
 
 const routes: RouteType = {
   '/': home,
   '/about': about,
+  '/projects': projects
 };
 
 const rootDiv: HTMLElement = document.getElementById('root')!;

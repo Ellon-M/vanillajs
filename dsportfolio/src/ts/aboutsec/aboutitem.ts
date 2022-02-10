@@ -7,10 +7,9 @@ import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 import Splitting from "splitting";
 
-// initialize Splitting
 const splitting = Splitting({});
 
-// Calculate the viewport size
+
 let winsize = calcWinsize();
 window.addEventListener('resize', () => winsize = calcWinsize());
 
@@ -31,7 +30,7 @@ interface DOMElements {
 export class AboutItem {
     DOM!: DOMElements;
     abtArr;
-    magneticFx; // the circle magnetic functionality
+    magneticFx;
     timelineHoverOut!: gsap.core.Timeline;
     timelineHoverIn!: gsap.core.Timeline;
     timelineHoverOpen!: gsap.core.Timeline;

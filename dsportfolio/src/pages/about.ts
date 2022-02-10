@@ -22,6 +22,13 @@ const about = `
 </div>
         
     <svg class="cursor" width="80" height="80" viewBox="0 0 80 80">
+        <defs>
+            <filter id="filter-1" x="-50%" y="-50%" width="200%" height="200%" 
+            filterUnits="objectBoundingBox">
+                <feTurbulence type="fractalNoise" baseFrequency="0.02 0.15" numOctaves="3" result="warp" />
+                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="0" in="SourceGraphic" in2="warp" />
+            </filter>
+    </defs>
     <circle class="cursor__inner" cx="40" cy="40" r="20"/>
     </svg>
 

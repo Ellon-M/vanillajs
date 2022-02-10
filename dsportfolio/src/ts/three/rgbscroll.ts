@@ -6,7 +6,7 @@ import vertex from './shaders/rgbVertex.glsl';
 let scrollable = document.querySelector('#root') as HTMLElement;
 let current = 0;
 let target = 0;
-let ease = 0.075;
+let ease = 0.095;
 
 var canvas = document.createElement('canvas'),
 ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
