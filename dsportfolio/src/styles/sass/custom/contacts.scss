@@ -69,7 +69,7 @@
     }
 
     &-footer {
-        height: 20vh;
+        height: 22vh;
         max-height: 20vh !important;
         bottom: 0 !important;
         background-color: black;
@@ -141,6 +141,19 @@
     fill: black;
     transform: translate(48.5%, 50%);
     z-index: -3;
+}
+
+.footer-marquee {
+    width: 400%;
+    margin-top: 2vh;
+    height: 3.3vh;
+    background-color: #FDFAF3;
+    opacity: .7;
+    color: $secondary-dark;
+    font-size: .9rem;
+    padding-top: 5px;
+    display: inline-flex;
+    overflow-x: scroll;
 }
 
 

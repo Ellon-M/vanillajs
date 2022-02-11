@@ -10,22 +10,27 @@ interface DOMEl {
     footerMask: any;
     circle: any;
     footerCircle: any;
+    footerMarquee: any;
 }
 
 export class Liquid {
     DOM: DOMEl;
     magneticFx;
+    marqueeItem;
 
     constructor(el: Element) {
-        this.DOM = {el: el, link: undefined, mask: undefined, footerLink: undefined, footerMask: undefined, footerCircle: undefined, circle: undefined}
+        this.DOM = {el: el, link: undefined, mask: undefined, footerLink: undefined, footerMask: undefined, footerCircle: undefined, circle: undefined, footerMarquee: undefined}
         this.DOM.link = document.querySelector('.contacts-button') as Element;
         this.DOM.footerLink = this.DOM.el;
         this.DOM.footerMask = this.DOM.footerLink.querySelector('.socials-circle-mask');
         this.DOM.circle = document.querySelector('#email-circle') as Element;
         this.DOM.footerCircle = this.DOM.footerLink.querySelector('.footer-circle');
         this.DOM.mask = document.querySelector('#email-circle-2');
+        this.DOM.footerMarquee = document.querySelector('.footer-marquee');
+        this.marqueeItem = this.DOM.footerMarquee.querySelectorAll('span');
         this.magneticFx = new MagneticFx(this.DOM.link);
         this.initEvents();
+        this.playFooterMarquee();
     }
 
     initEvents() {
@@ -93,6 +98,22 @@ export class Liquid {
                 rotation: 0,
                 onComplete: () => {gsap.set(this.DOM.footerCircle, {fill: 'none'})}
             })
+    }
+
+    playFooterMarquee() {
+        const itemWidth = this.marqueeItem[0].offsetWidth;
+        const wrapWidth = ((gsap.utils.toArray(this.marqueeItem).length - 1) * itemWidth);
+        console.log((gsap.utils.toArray(this.marqueeItem).length))
+
+        gsap.to(this.DOM.footerMarquee, {
+            x: "+=" + ((-wrapWidth/2) + itemWidth),
+            ease: 'none',
+            duration: 9, 
+            repeat: -1, 
+            modifiers: {
+                x: gsap.utils.unitize( gsap.utils.wrap(itemWidth, -wrapWidth*2))  
+            }           
+        })
     }
 }
 

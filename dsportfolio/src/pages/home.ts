@@ -23,16 +23,16 @@ const home = `
         <div class='f-nav-wrap'>
           <nav class='f-nav'>
             <ul class='f-nav-ul'>
-                <li class='f-nav-li'><a href="" class="link f-nav-link" data-text="Home"><span>Home</span></a></li>
+                <li class='f-nav-li'><a id="" href="/" class="link f-nav-link" data-text="Home"><span>Home</span></a></li>
                 
           
-                <li class='f-nav-li'><a href="" class="link f-nav-link" data-text="About"><span>About</span></a></li>
+                <li class='f-nav-li'><a id="about" class="link f-nav-link" data-text="About"><span>About</span></a></li>
 
 
-                <li class='f-nav-li'><a href="" class="link f-nav-link" data-text="Projects"><span>Projects</span></a></li>
+                <li class='f-nav-li'><a id="projects"  class="link f-nav-link" data-text="Projects"><span>Projects</span></a></li>
 
           
-                <li class='f-nav-li'><a href="" class="link f-nav-link" data-text="Contacts"><span>Contacts</span></a></li>
+                <li class='f-nav-li'><a href="#" class="link f-nav-link" data-text="Contacts"><span>Contacts</span></a></li>
             </ul>
           </nav>
           <div class='f-nav-theme-btns'>
@@ -326,6 +326,9 @@ const home = `
               <text x="20.5" y="33">WAT</text>
               <circle cx="30" cy="30" r="20" stroke="#FDFAF3" stroke-width="1" stroke-dasharray="2,4" fill="none" class='stroke-out' />
         </svg>
+      </div>
+      <div class='footer-marquee'>
+        <span>NEXT PAGE/<i>ABOUT</i></span>  <span>&nbsp NEXT PAGE/<i>ABOUT</i></span> <span>&nbsp NEXT PAGE/<i>ABOUT</i></span> <span>&nbsp NEXT PAGE/<i>ABOUT</i></span> <span>&nbsp NEXT PAGE/<i>ABOUT</i></span> <span>&nbsp NEXT PAGE/<i>ABOUT</i></span> <span>&nbsp NEXT PAGE/<i>ABOUT</i></span> <span>&nbsp NEXT PAGE/<i>ABOUT</i></span> <span>&nbsp NEXT PAGE/<i>ABOUT</i></span> <span>&nbsp NEXT PAGE/<i>ABOUT</i></span> <span>&nbsp NEXT PAGE/<i>ABOUT</i></span>  <span>&nbsp NEXT PAGE/<i>ABOUT</i></span>  <span>&nbsp NEXT PAGE/<i>ABOUT</i></span>  <span>&nbsp NEXT PAGE/<i>ABOUT</i></span>  <span>&nbsp NEXT PAGE/<i>ABOUT</i></span>  <span>&nbsp NEXT PAGE/<i>ABOUT</i></span> <span>&nbsp NEXT PAGE/<i>ABOUT</i></span> <span>&nbsp NEXT PAGE/<i>ABOUT</i></span> <span>&nbsp NEXT PAGE/<i>ABOUT</i></span>
       </div>
     </footer>
   </div>

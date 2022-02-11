@@ -25,11 +25,12 @@ export class HomeItem {
         this.DOM = {el: el, homeChars: undefined, homeText: undefined, homeTextSub: null, homeCharsSub: undefined, homeCharsSubB: undefined};
         this.DOM.homeText = this.DOM.el.querySelector('.f-word');
         this.DOM.homeTextSub = this.DOM.el.querySelector('.f-word-sub');
+
         this.textLayout();
-        this.initEvent();
+        this.initEvents();
     }
 
-    initEvent() {
+    initEvents() {
         window.addEventListener('load', (e) => 
             this.play());
     }
@@ -78,5 +79,6 @@ export class HomeItem {
             visibility: 'visible',
         }, 'load+=0.22')
     }
+
 
 }
